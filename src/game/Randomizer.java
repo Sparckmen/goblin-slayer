@@ -24,4 +24,8 @@ public class Randomizer {
     public int nextIntMinMax(int min, int max) {
         return random.nextInt(max - min) + min;
     }
+
+    public double nextDouble() {
+        return random.nextDouble();
+    }
 }
