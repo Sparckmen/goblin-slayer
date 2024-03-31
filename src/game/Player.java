@@ -35,7 +35,7 @@ public class Player {
 
     public void attack(Enemy enemy) {
         enemy.takeDamage(damage);
-        System.out.printf("Player attacks and deals %d damage to the %s. %s HP: %d\n", damage, enemy.getEnemyType(), enemy.getEnemyType(), enemy.getHp());
+        System.out.printf("Player attacks and deals %d damage to the %s. %s HP: %d\n", damage, enemy.getName(), enemy.getName(), enemy.getHp());
     }
 
     public void takeDamage(int damage) {

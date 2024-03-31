@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum EnemyType {
-    Goblin(0);
+    Goblin(0), GoblinBrute(1);
 
     private final int orderNumber;
 

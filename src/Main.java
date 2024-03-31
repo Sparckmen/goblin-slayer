@@ -25,9 +25,9 @@ public class Main {
         System.out.println("Welcome player. You must defeat " + enemies.size() + " enemies. Good Luck!");
 
         for (Enemy enemy : enemies) {
-            System.out.printf("\n=== Enemy %s. HP: %d ===\n", enemy.getEnemyType(), enemy.getHp());
+            System.out.printf("\n=== Enemy %s. HP: %d ===\n", enemy.getName(), enemy.getHp());
 
-            while (enemy.getHp() > 0) {
+            while (enemy.getHp() > 0 && !player.isDead()) {
                 if (player.isBlocking()) {
                     player.unblock();
                 }
@@ -49,7 +49,7 @@ public class Main {
                 }
 
                 if (enemy.isDead()) {
-                    System.out.printf("%s defeated!", enemy.getEnemyType());
+                    System.out.printf("%s defeated!", enemy.getName());
                     continue;
                 }
 
@@ -57,7 +57,6 @@ public class Main {
 
                 if (player.isDead()) {
                     System.out.println("You have been defeated. Try again.");
-                    break;
                 }
             }
         }
