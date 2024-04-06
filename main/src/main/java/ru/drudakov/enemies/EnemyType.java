@@ -1,4 +1,4 @@
-package enemies;
+package ru.drudakov.enemies;
 
 import java.util.HashMap;
 import java.util.Map;

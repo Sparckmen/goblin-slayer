@@ -1,6 +1,6 @@
-package game;
+package ru.drudakov.game;
 
-import enemies.Enemy;
+import ru.drudakov.enemies.Enemy;
 
 public class Player {
     private int hp;

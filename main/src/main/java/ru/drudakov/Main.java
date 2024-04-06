@@ -1,7 +1,8 @@
-import enemies.Enemy;
-import game.EnemyGenerator;
-import game.Player;
-import utils.InputUtils;
+package ru.drudakov;
+
+import ru.drudakov.enemies.Enemy;
+import ru.drudakov.game.EnemyGenerator;
+import ru.drudakov.game.Player;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class Main {
         System.out.println("Player's HP: " + player.getHp());
 
         List<Enemy> enemies = EnemyGenerator.generateEnemies();
-        System.out.println("Welcome player. You must defeat " + enemies.size() + " enemies. Good Luck!");
+        System.out.println("Welcome player. You must defeat " + enemies.size() + " ru.drudakov.enemies. Good Luck!");
 
         for (Enemy enemy : enemies) {
             System.out.printf("\n=== Enemy %s. HP: %d ===\n", enemy.getName(), enemy.getHp());
@@ -37,14 +38,9 @@ public class Main {
 
                 int choice = InputUtils.inputInt(ACTIONS_NUM);
                 switch (choice) {
-                    case 1:
-                        player.attack(enemy);
-                        break;
-                    case 2:
-                        player.block();
-                        break;
-                    default:
-                        System.out.println("Invalid choice.");
+                    case 1 -> player.attack(enemy);
+                    case 2 -> player.block();
+                    default -> System.out.println("Invalid choice.");
                 }
 
                 if (enemy.isDead()) {
@@ -61,7 +57,7 @@ public class Main {
         }
 
         if (!player.isDead()) {
-            System.out.println("\nAll enemies defeated! You win!");
+            System.out.println("\nAll ru.drudakov.enemies defeated! You win!");
         }
     }
 }

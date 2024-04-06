@@ -1,4 +1,4 @@
-package utils;
+package ru.drudakov;
 
 import java.util.Random;
 

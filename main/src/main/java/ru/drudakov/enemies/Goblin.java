@@ -1,4 +1,4 @@
-package enemies;
+package ru.drudakov.enemies;
 
 public class Goblin extends Enemy {
     public static final int BASE_HP = 30;

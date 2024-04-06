@@ -1,7 +1,7 @@
-package enemies;
+package ru.drudakov.enemies;
 
-import game.Player;
-import utils.Randomizer;
+import ru.drudakov.game.Player;
+import ru.drudakov.Randomizer;
 
 public class GoblinBrute extends Enemy {
     private static final double BREAK_BLOCK_CHANCE = 0.2;

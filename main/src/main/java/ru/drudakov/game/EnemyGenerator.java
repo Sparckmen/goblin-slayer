@@ -1,10 +1,10 @@
-package game;
+package ru.drudakov.game;
 
-import enemies.Enemy;
-import enemies.EnemyType;
-import enemies.Goblin;
-import enemies.GoblinBrute;
-import utils.Randomizer;
+import ru.drudakov.enemies.Enemy;
+import ru.drudakov.enemies.EnemyType;
+import ru.drudakov.enemies.Goblin;
+import ru.drudakov.enemies.GoblinBrute;
+import ru.drudakov.Randomizer;
 
 import java.util.ArrayList;
 import java.util.List;
