@@ -4,6 +4,7 @@ import enemies.Enemy;
 import enemies.EnemyType;
 import enemies.Goblin;
 import enemies.GoblinBrute;
+import utils.Randomizer;
 
 import java.util.ArrayList;
 import java.util.List;

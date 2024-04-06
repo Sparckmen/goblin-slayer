@@ -1,7 +1,7 @@
 package enemies;
 
 import game.Player;
-import game.Randomizer;
+import utils.Randomizer;
 
 public class GoblinBrute extends Enemy {
     private static final double BREAK_BLOCK_CHANCE = 0.2;

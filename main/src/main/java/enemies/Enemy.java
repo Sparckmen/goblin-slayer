@@ -1,7 +1,7 @@
 package enemies;
 
 import game.Player;
-import game.Randomizer;
+import utils.Randomizer;
 
 public abstract class Enemy {
     private final String name;

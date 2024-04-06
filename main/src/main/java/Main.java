@@ -1,12 +1,11 @@
 import enemies.Enemy;
 import game.EnemyGenerator;
 import game.Player;
+import utils.InputUtils;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
 
     private static final int ACTIONS_NUM = 2;
 
@@ -36,7 +35,7 @@ public class Main {
                 System.out.println("1. Attack");
                 System.out.println("2. Block");
 
-                int choice = inputInt(ACTIONS_NUM);
+                int choice = InputUtils.inputInt(ACTIONS_NUM);
                 switch (choice) {
                     case 1:
                         player.attack(enemy);
@@ -64,13 +63,5 @@ public class Main {
         if (!player.isDead()) {
             System.out.println("\nAll enemies defeated! You win!");
         }
-    }
-
-    public static int inputInt(int max) {
-        int choice = scanner.nextInt();
-        while (choice < 0 && choice > max) {
-            choice = scanner.nextInt();
-        }
-        return choice;
     }
 }
