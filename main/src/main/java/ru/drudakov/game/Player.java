@@ -33,6 +33,11 @@ public class Player {
         return isBlocking;
     }
 
+    public void heal(int healHp) {
+        hp += healHp;
+        System.out.printf("You've healed %d hp. Now is you HP is: %d\n", healHp, hp);
+    }
+
     public void attack(Enemy enemy) {
         enemy.takeDamage(damage);
         System.out.printf("Player attacks and deals %d damage to the %s. %s HP: %d\n", damage, enemy.getName(), enemy.getName(), enemy.getHp());
@@ -59,5 +64,9 @@ public class Player {
     public void unblock() {
         isBlocking = false;
         System.out.println("Player stops blocking.");
+    }
+
+    public int getDamage() {
+        return damage;
     }
 }

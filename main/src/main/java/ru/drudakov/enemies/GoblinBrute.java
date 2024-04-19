@@ -13,8 +13,6 @@ public class GoblinBrute extends Enemy {
 
     @Override
     public void attack(Player player) {
-        int damageModifier = Randomizer.getInstance().nextIntMinMax(-10, 5);
-        int playerDamage = damage + damageModifier;
         System.out.print(getName() + " attacks. ");
 
         double chanceToBreakBlock = Randomizer.getInstance().nextDouble();
@@ -22,6 +20,6 @@ public class GoblinBrute extends Enemy {
             System.out.print(getName() + " breaks player block. ");
             player.unblock();
         }
-        player.takeDamage(playerDamage);
+        player.takeDamage(this.damage);
     }
 }

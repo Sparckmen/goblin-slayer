@@ -1,7 +1,6 @@
 package ru.drudakov.enemies;
 
 import ru.drudakov.game.Player;
-import ru.drudakov.Randomizer;
 
 public abstract class Enemy {
     private final String name;
@@ -26,10 +25,8 @@ public abstract class Enemy {
     }
 
     public void attack(Player player) {
-        int damageModifier = Randomizer.getInstance().nextIntMinMax(-5, 5);
-        int playerDamage = damage + damageModifier;
         System.out.print(getName() + " attacks. ");
-        player.takeDamage(playerDamage);
+        player.takeDamage(damage);
     }
 
     public int getHp() {
@@ -42,5 +39,9 @@ public abstract class Enemy {
 
     public String getName() {
         return name;
+    }
+
+    public int getDamage() {
+        return damage;
     }
 }

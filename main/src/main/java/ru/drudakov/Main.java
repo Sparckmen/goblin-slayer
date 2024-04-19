@@ -3,8 +3,10 @@ package ru.drudakov;
 import ru.drudakov.enemies.Enemy;
 import ru.drudakov.game.EnemyGenerator;
 import ru.drudakov.game.Player;
+import ru.drudakov.items.HealingPotion;
 
 import java.util.List;
+import java.util.Stack;
 
 public class Main {
 
@@ -17,12 +19,14 @@ public class Main {
      *  противник не был убит, то он атакует игрока. Игра продолжается, пока игрок или все враги не будут побеждены.
      */
     public static void main(String[] args) {
-
         Player player = new Player();
         System.out.println("Player's HP: " + player.getHp());
 
+        Stack<HealingPotion> potions = new Stack<>();
+        potions.add(new HealingPotion(-5));
+
         List<Enemy> enemies = EnemyGenerator.generateEnemies();
-        System.out.println("Welcome player. You must defeat " + enemies.size() + " ru.drudakov.enemies. Good Luck!");
+        System.out.println("Welcome player. You must defeat " + enemies.size() + " enemies. Good Luck!");
 
         for (Enemy enemy : enemies) {
             System.out.printf("\n=== Enemy %s. HP: %d ===\n", enemy.getName(), enemy.getHp());
@@ -35,11 +39,20 @@ public class Main {
                 System.out.println("Choose your action:");
                 System.out.println("1. Attack");
                 System.out.println("2. Block");
+                System.out.println("3. Heal");
 
                 int choice = InputUtils.inputInt(ACTIONS_NUM);
                 switch (choice) {
                     case 1 -> player.attack(enemy);
                     case 2 -> player.block();
+                    case 3 -> {
+                        if (potions.isEmpty()) {
+                            System.out.println("You out of potions");
+                        } else {
+                            var potion = potions.pop();
+                            potion.use(player);
+                        }
+                    }
                     default -> System.out.println("Invalid choice.");
                 }
 
@@ -57,7 +70,7 @@ public class Main {
         }
 
         if (!player.isDead()) {
-            System.out.println("\nAll ru.drudakov.enemies defeated! You win!");
+            System.out.println("\nAll enemies have been defeated! You win!");
         }
     }
 }
