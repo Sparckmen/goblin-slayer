@@ -8,10 +8,10 @@ public enum EnemyType {
 
     private final int orderNumber;
 
-    private static final Map<Integer, EnemyType> map = new HashMap<>(values().length);
+    private static final Map<Integer, EnemyType> ENEMY_TYPE_TO_NUMBER_MAP = new HashMap<>(values().length);
 
     static {
-        for (EnemyType enemyType : values()) map.put(enemyType.orderNumber, enemyType);
+        for (EnemyType enemyType : values()) ENEMY_TYPE_TO_NUMBER_MAP.put(enemyType.orderNumber, enemyType);
     }
 
     EnemyType(int orderNumber) {
@@ -19,7 +19,7 @@ public enum EnemyType {
     }
 
     public static EnemyType of(int orderNumber) {
-        EnemyType result = map.get(orderNumber);
+        EnemyType result = ENEMY_TYPE_TO_NUMBER_MAP.get(orderNumber);
         if (result == null) {
             throw new IllegalArgumentException("Invalid order number: " + orderNumber);
         }
