@@ -35,7 +35,13 @@ public class Player {
 
     public void heal(int healHp) {
         hp += healHp;
+        additionalHeal();
         System.out.printf("You've healed %d hp. Now is you HP is: %d\n", healHp, hp);
+    }
+
+    private void additionalHeal() {
+        hp += 5;
+        System.out.println("Additional heal on 5 hp");
     }
 
     public void attack(Enemy enemy) {
